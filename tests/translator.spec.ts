@@ -69,9 +69,9 @@ test.describe('Singlish to Sinhala Translator Tests', () => {
     },
     { id: 'Pos_Fun_0010', 
       name: 'Long mixed Singlish paragraph', 
-      input: 'mama dhannava mee assignment ekata playwright use karala test cases automate karanna oona kiyala', 
-      expected: 'මම දන්නව මේ assignment එකට playwright use කරල test cases automate කරන්න ඕන කියල',
-      actual: 'මම දන්නව මේ assignment එකට playwright use කරල test cases  automate කරන්න ඕන කියල බට් කලින් මම playwright use කරල නැති නිස එක ගැන video ටිකක් බලන්න ඕන සහ මම හිතනවා අපිට ඔන scenarios ටික මම හරියට කර කියල, අවශ්ය දෙවල් include වෙලද කියල අය check කරන්න ඔන. deadline වලට කලින් සුබ්මිටෙ කරන්තත් ඕන '
+      input: 'mama dhannava mee assignment ekata playwright use karala test cases  automate karanna oona kiyala but kalin mama playwright use karalaa naethi nisa eka gaena video tikak balanna oona saha mama hithanavaa apita oona scenarios tika mama hariyata kara kiyala, avashya dheval include veladha kiyala aya check karanna ona. deadline valata kalin submite karanthath oona', 
+      expected: 'මම දන්නව මේ assignment එකට playwright use කරල test cases  automate කරන්න ඕන කියල but කලින් මම playwright use කරලා නැති නිස එක ගැන video ටිකක් බලන්න ඕන සහ මම හිතනවා අපිට ඕන scenarios ටික මම හරියට කර කියල, අවශ්ය දෙවල් include වෙලද කියල අය check කරන්න ඔන. deadline වලට කලින් සුබ්මිටෙ කරන්තත් ඕන',
+      actual: 'මම දන්නව මේ assignment එකට playwright use කරල test cases  automate කරන්න ඕන කියල but කලින් මම playwright use කරලා නැති නිස එක ගැන video ටිකක් බලන්න ඕන සහ මම හිතනවා අපිට ඕන scenarios ටික මම හරියට කර කියල, අවශ්ය දෙවල් include වෙලද කියල අය check කරන්න ඔන. deadline වලට කලින් සුබ්මිටෙ කරන්තත් ඕන'
     },
     { id: 'Pos_Fun_0011', 
       name: 'Short sentence with brand term LinkedIn', 
@@ -81,8 +81,8 @@ test.describe('Singlish to Sinhala Translator Tests', () => {
     },
     { id: 'Pos_Fun_0012', 
       name: 'Short sentence with abbreviation ID', 
-      input: 'magee ID eka gedhara dhaala aevith',
-      expected: 'මගේ ID එක ගෙදර දාල ඇවිත්',
+      input: 'magee ID eka gedhara dhaalaa aevith',
+      expected: 'මගේ ID එක ගෙදර දාලා ඇවිත්',
       actual: 'මගේ ID එක ගෙදර දාලා ඇවිත්' 
     },
     { id: 'Pos_Fun_0013', 
@@ -101,7 +101,7 @@ test.describe('Singlish to Sinhala Translator Tests', () => {
       name: 'Short question with measurement unit Kg', 
       input: 'mata parippu 1kg dhenna puLuvandha?',
       expected: 'මට පරිප්පු 1kg දෙන්න පුළුවන්ද?',
-      actual: 'මට පරිප්පු 1kg දෙනන්න පුලුවන්ද?'
+      actual: 'මට පරිප්පු 1kg දෙන්න පුළුවන්ද?'
     },
     { id: 'Pos_Fun_0016', 
       name: 'Short phrase pattern', 
@@ -112,12 +112,14 @@ test.describe('Singlish to Sinhala Translator Tests', () => {
     { id: 'Pos_Fun_0017', 
       name: 'Two short lines', 
       input: 'heta havasa enna. \n Cricket sellam karanna.',
-      expected: 'හෙට හවස එන්න. \n Cricket සෙල්ලම් කරන්න.' 
+      expected: 'හෙට හවස එන්න. \n Cricket සෙල්ලම් කරන්න.',
+      actual: 'හෙට හවස එන්න. \n Cricket සෙල්ලම් කරන්න.' 
     },
     { id: 'Pos_Fun_0018', 
       name: 'Short slang sentence', 
       input: 'ela machan! hariyatama set unaa.',
-      expected: 'එල මචන්! හරියටම සෙට් උනා.' 
+      expected: 'එල මචන්! හරියටම සෙට් උනා.',
+      actual: 'එල මචන්! හරියටම සෙට් උනා.' 
     },
     { id: 'Pos_Fun_0019', 
       name: 'Slang sentence with mixed English', 
