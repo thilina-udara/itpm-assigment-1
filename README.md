@@ -217,18 +217,7 @@ test('My test name', async ({ page }) => {
 });
 ```
 
-### Using Helper Functions:
-```typescript
-async function waitForTranslation(page: Page, timeout: number = 5000): Promise<void> {
-  await page.waitForTimeout(1000);
-}
 
-// Usage in test
-test('Translation test', async ({ page }) => {
-  await waitForTranslation(page);
-  // TypeScript knows page is of type Page
-});
-```
 
 ## 📧 Contact
 
