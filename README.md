@@ -266,4 +266,4 @@ TypeScript compiles to JavaScript before execution. Playwright handles this auto
 
 ---
 
-**Note:** This automation project uses TypeScript for better type safety and code quality. All test cases are documented in the accompanying Excel file `IT23247086_ITPM_.xlsx`.
+**Note:** This automation project uses TypeScript for better type safety and code quality. All test cases are documented in the accompanying Excel file `IT23247086.xlsx`.
