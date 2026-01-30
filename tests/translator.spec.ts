@@ -165,7 +165,10 @@ test.describe('Singlish to Sinhala Translator Tests', () => {
     },
     { id: 'Neg_Fun_0026', 
       name: 'Joined words with no spaces', 
-      input: 'danmatauniworkekaatharaiassignmentekathamaala',
+      input: 'dhaenmataassignmentekasubmitkarannathiyanavaa',
+      expected: 'දැන් මට assignment එක submit කරන්න තියනවා',
+      actual: 'දදැන්මටාස්සිග්න්මෙන්ටෙකසුබ්මිට්කරන්නතියනවා'
+
      },
     { id: 'Neg_Fun_0027', 
       name: 'Extra spaces and typo', 
