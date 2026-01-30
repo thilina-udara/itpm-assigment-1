@@ -255,39 +255,38 @@ test.describe('Singlish to Sinhala Translator Tests', () => {
     const outputBox = page.locator('.card:has-text("Sinhala") .bg-slate-50');
 
     // 4. Verification Logic
-    const isPositiveTest = tc.id.startsWith('Pos_');
-
     // Get the actual output
     const output = await outputBox.textContent();
     const outputText = output?.trim() || '';
 
+    // Log the details for manual verification as requested
+    // "input and acturel a=output check here"
+    console.log(`\n[${tc.id}] Input:    "${tc.input}"`);
+    console.log(`[${tc.id}] Actual:   "${outputText}"`);
+    if(tc.expected) console.log(`[${tc.id}] Expected: "${tc.expected}"`);
+
     if (tc.expected) {
-        if (isPositiveTest) {
-            // Positive Test: Output should match expected
-            if (outputText.includes(tc.expected)) {
-                console.log(`✓ [PASS] ${tc.id} - Output matches expected`);
-                expect(outputText).toContain(tc.expected);
-            } else {
-                console.log(`✗ [FAIL] ${tc.id} - Expected: "${tc.expected}", Got: "${outputText.substring(0, 80)}"`);
-                expect(outputText).toContain(tc.expected);
-            }
+        const isMatch = outputText.includes(tc.expected);
+        
+        if (isMatch) {
+            console.log(`[${tc.id}] Result: ✓ PASS`);
         } else {
-            // Negative Test: Output should NOT match expected (bad input = bad output)
-            if (outputText.includes(tc.expected)) {
-                console.log(`✗ [FAIL] ${tc.id} (Negative) - Should NOT match corrected text but it did`);
-                expect(outputText).not.toContain(tc.expected);
-            } else {
-                console.log(`✓ [PASS] ${tc.id} (Negative) - Output differs from corrected text as expected`);
-                expect(true).toBe(true); // Explicit pass
-            }
+            console.log(`[${tc.id}] Result: ✗ FAIL (Matches User Requirement: Negative -> Fail if incorrect)`);
         }
+
+        // User requested: "positive -> , negatib=ve -> fail"
+        // This asserts that the output MUST match the expected correct text.
+        // Positive tests will PASS (assuming translator works).
+        // Negative tests will FAIL (because translator produces garbage for garbage input).
+        expect(outputText).toContain(tc.expected);
     } else {
-        // No expected value, just verify we got output
+        // No expected value provided
         if (outputText.length > 0) {
-            console.log(`✓ [PASS] ${tc.id} - Got output`);
+            console.log(`[${tc.id}] Result: ✓ PASS (Got output)`);
             expect(outputText.length).toBeGreaterThan(0);
         } else {
-            console.log(`✗ [INFO] ${tc.id} - No output`);
+            console.log(`[${tc.id}] Result: ✗ FAIL (No output)`);
+            expect(outputText.length).toBeGreaterThan(0);
         }
     }
   });
